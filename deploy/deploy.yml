@@ -1,0 +1,23 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simpleweb-deployment
+  labels:
+    app: simpleweb-app
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: simpleweb-app
+  template:
+    metadata:
+      labels:
+        app: simpleweb-app
+    spec: 
+      terminationGracePeriodSeconds: 1
+      containers:
+      - name: simpleweb
+        image: dadolfi/simpleweb:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80

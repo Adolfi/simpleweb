@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: simpleweb-pod
+  labels:
+    app: simpleweb-app
+spec:
+  containers:
+    - name: simpleweb
+      image: dadolfi/simpleweb:latest
+      ports:
+        - containerPort: 80
